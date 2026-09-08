@@ -1,0 +1,31 @@
+# Environments
+.venv/
+venv/
+env/
+ENV/
+
+# Secrets
+.streamlit/secrets.toml
+*.env
+
+# Python byte code and caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# PyCharm / IDE settings
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Data dumps and outputs generated locally
+Dump_sample.xlsx
+Dump_sample.xlsb
+output_*.xlsx
+output_*.xlsb
+CRE_cases_pan.xlsx
+UCIC_cases.xlsx
+NPA_valuation.xlsx
+segregated_*.xlsx
