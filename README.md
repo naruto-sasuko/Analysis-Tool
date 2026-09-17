@@ -3,8 +3,9 @@ title: Analysis Tool Saas
 emoji: ⚡
 colorFrom: blue
 colorTo: indigo
-sdk: docker
-app_port: 7860
+sdk: streamlit
+sdk_version: 1.42.0
+app_file: app.py
 pinned: false
 short_description: Banking and loan portfolio risk analysis suite
 ---
