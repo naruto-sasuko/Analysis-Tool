@@ -15,6 +15,7 @@ if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
 
+import os
 import io
 import pandas as pd
 import streamlit as st
@@ -62,6 +63,9 @@ st.markdown(
 
 # 2. Initialize Supabase Client with safe fallback
 def get_secret(key: str, default: str) -> str:
+    env_val = os.environ.get(key)
+    if env_val:
+        return env_val
     try:
         return st.secrets.get(key, default)
     except Exception:

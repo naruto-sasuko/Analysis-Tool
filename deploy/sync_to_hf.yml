@@ -1,0 +1,33 @@
+# GitHub Actions Workflow Template for Hugging Face Spaces Deployment
+# To enable this in GitHub:
+# 1. Ensure your GitHub Personal Access Token has the 'workflow' scope, OR create this file directly on github.com
+# 2. Add HF_TOKEN secret under Settings > Secrets and variables > Actions
+# 3. Place this file at .github/workflows/sync_to_hf.yml
+
+name: Sync to Hugging Face Spaces
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  sync-to-hub:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          lfs: true
+
+      - name: Push to Hugging Face Space
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          if [ -z "$HF_TOKEN" ]; then
+            echo "HF_TOKEN secret is not set in GitHub repository secrets."
+            echo "Please add HF_TOKEN under Settings > Secrets and variables > Actions."
+            exit 1
+          fi
+          git push --force https://naruto-sasuko:$HF_TOKEN@huggingface.co/spaces/naruto-sasuko/analysis-tool-saas main

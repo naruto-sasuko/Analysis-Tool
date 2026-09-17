@@ -1,3 +1,14 @@
+---
+title: Analysis Tool Saas
+emoji: ⚡
+colorFrom: blue
+colorTo: indigo
+sdk: docker
+app_port: 7860
+pinned: false
+short_description: Banking and loan portfolio risk analysis suite
+---
+
 # Analysis Tool ⚡
 
 A modern, Streamlit-based web application and analytical pipeline designed for banking and loan portfolio risk analysis. It streamlines spreadsheet processing with automated routines for KYC cross-validation, customer ID deduplication, and NPA property valuation auditing.

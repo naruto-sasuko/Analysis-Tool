@@ -4,3 +4,11 @@ showErrorDetails = false
 
 [browser]
 gatherUsageStats = false
+
+[server]
+port = 7860
+address = "0.0.0.0"
+headless = true
+enableCORS = false
+enableXsrfProtection = false
+
