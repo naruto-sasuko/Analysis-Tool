@@ -25,9 +25,9 @@ if "%TOKEN%"=="" (
 echo.
 echo [3/3] Pushing to Hugging Face Space...
 if not "!TOKEN!"=="" (
-    git push https://naruto-sasuko:!TOKEN!@huggingface.co/spaces/naruto-sasuko/analysis-tool-saas main
+    git push --force https://naruto-sasuko:!TOKEN!@huggingface.co/spaces/naruto-sasuko/analysis-tool-saas main
 ) else (
-    git push space main
+    git push --force space main
 )
 
 if %ERRORLEVEL% EQU 0 (

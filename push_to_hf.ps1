@@ -31,10 +31,10 @@ if (-not $token) {
 if ($token) {
     Write-Host "`nPushing to Hugging Face Spaces using provided token..." -ForegroundColor Cyan
     $pushUrl = "https://naruto-sasuko:$token@huggingface.co/spaces/naruto-sasuko/analysis-tool-saas"
-    git push -u $pushUrl main
+    git push --force -u $pushUrl main
 } else {
     Write-Host "`nPushing to Hugging Face Spaces using Git credentials..." -ForegroundColor Cyan
-    git push -u space main
+    git push --force -u space main
 }
 
 if ($LASTEXITCODE -eq 0) {
